@@ -1,0 +1,62 @@
+.chaosLog {
+  position: absolute;
+  bottom: 20px;
+  right: 320px;
+  width: 400px;
+  height: 200px;
+  background-color: rgba(13, 13, 13, 0.95);
+  border: 1px solid #333;
+  border-top: 2px solid #ff3333;
+  padding: 12px;
+  border-radius: 4px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.header {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ff3333;
+  letter-spacing: 1px;
+}
+
+.logList {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.7rem;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+.logList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.logList::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+.logItem {
+  margin-bottom: 4px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 4px;
+}
+
+.timestamp {
+  color: #666;
+  margin-right: 6px;
+}
+
+.empty {
+  color: #444;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

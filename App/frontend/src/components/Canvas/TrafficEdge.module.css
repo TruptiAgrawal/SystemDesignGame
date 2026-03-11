@@ -1,0 +1,13 @@
+.pulse {
+  stroke-dasharray: 5, 10;
+  animation: dash infinite linear;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 15;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

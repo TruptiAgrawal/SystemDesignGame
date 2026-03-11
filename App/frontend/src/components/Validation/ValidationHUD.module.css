@@ -1,0 +1,41 @@
+.hud {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(26, 26, 26, 0.9);
+  border: 1px solid #333;
+  border-left: 4px solid #ffcc00;
+  padding: 12px;
+  border-radius: 4px;
+  width: 280px;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.header {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffcc00;
+  letter-spacing: 1px;
+}
+
+.issueList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.issueItem {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #fff;
+  border-bottom: 1px solid #222;
+  padding-bottom: 5px;
+}
+
+.issueItem:last-child {
+  border-bottom: none;
+}

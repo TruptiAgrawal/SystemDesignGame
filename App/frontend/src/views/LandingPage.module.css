@@ -1,0 +1,123 @@
+.container {
+  min-height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal {
+  width: 900px;
+  max-width: 90vw;
+  background-color: rgba(13, 13, 13, 0.95);
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 1);
+  z-index: 10;
+}
+
+.header {
+  background-color: #1a1a1a;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #333;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.title {
+  color: #666;
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
+.body {
+  padding: 60px;
+  text-align: center;
+}
+
+.headline {
+  font-size: 4rem;
+  color: #00ff41;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 8px;
+}
+
+.subline {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tutorialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.step h4 {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.step p {
+  color: #666;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.number {
+  color: #00ff41;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.cta {
+  background-color: #00ff41;
+  color: #000;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.grid {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}

@@ -1,0 +1,57 @@
+.dashboard {
+  position: absolute;
+  top: 80px;
+  right: 320px;
+  width: 400px;
+  background-color: rgba(13, 13, 13, 0.9);
+  border: 1px solid #333;
+  padding: 15px;
+  border-radius: 4px;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  background-color: #1a1a1a;
+  border: 1px solid #222;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.statCard label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.statCard .value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #00ff41;
+}
+
+.value.error {
+  color: #ff3333;
+}
+
+.charts {
+  border-top: 1px solid #222;
+  padding-top: 15px;
+}
+
+.chartWrapper h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 10px;
+}

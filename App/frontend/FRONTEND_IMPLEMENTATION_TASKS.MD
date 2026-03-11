@@ -12,6 +12,7 @@ This document outlines the step-by-step implementation plan for the System Desig
     2.  **Zustand Store (`useSystemStore`):** Define the schema for `nodes` (infrastructure properties), `edges` (traffic flow), and `missionContext` (constraints/targets).
     3.  **Type Definitions:** Create strict interfaces for `InfrastructureNode` (e.g., `NodeProps`, `CapacityMetrics`) to ensure the simulation engine receives predictable data.
     4.  **Routing:** Basic `react-router-dom` setup for Landing, Gallery, and Game views.
+    5.  **Persistence Layer:** Integrate `zustand/middleware` (persist) to automatically sync the game state and "Aced" missions to `localStorage`.
 
 ### Phase 2: The Architect (Visual Canvas)
 *   **Goal:** Enable users to design architectures using a node-based interface.

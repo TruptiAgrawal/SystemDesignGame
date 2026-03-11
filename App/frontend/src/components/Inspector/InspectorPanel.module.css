@@ -1,0 +1,124 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #fff;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #00ff41;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.typeBadge {
+  font-size: 0.7rem;
+  background-color: #333;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+  color: #888;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.btnGroup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.btnGroup button {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #888;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.btnGroup button:hover {
+  border-color: #444;
+}
+
+.btnGroup button.active {
+  background-color: #00ff41;
+  color: #000;
+  border-color: #00ff41;
+  font-weight: bold;
+}
+
+.divider {
+  height: 1px;
+  background-color: #222;
+  margin: 10px 0;
+}
+
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metricItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.cost {
+  color: #ff3333;
+  font-weight: bold;
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #444;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Custom range input styling */
+input[type="range"] {
+  accent-color: #00ff41;
+  background: #333;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.removeBtn {
+  margin-top: 10px;
+  background-color: transparent;
+  border: 1px solid #ff3333;
+  color: #ff3333;
+  padding: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.removeBtn:hover {
+  background-color: #ff3333;
+  color: #000;
+}
