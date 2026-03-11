@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSystemStore } from '../../store/useSystemStore';
 import styles from './InspectorPanel.module.css';
 

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useSystemStore } from '../../store/useSystemStore';
 import styles from './PostMortem.module.css';
 

@@ -1,11 +1,10 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import type { EdgeProps } from 'reactflow';
 import { BaseEdge, getBezierPath } from 'reactflow';
 import { useSystemStore } from '../../store/useSystemStore';
 import styles from './TrafficEdge.module.css';
 
 const TrafficEdge = ({
-  id,
   sourceX,
   sourceY,
   targetX,

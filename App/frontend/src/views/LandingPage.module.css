@@ -1,123 +1,280 @@
+/* ─────────────────────────────────────────
+   LandingPage.module.css
+   Fully scoped — no reliance on global styles
+   ───────────────────────────────────────── */
+
+/* Container: full viewport, isolated from #root padding */
 .container {
-  min-height: 100vh;
-  background-color: #000;
+  position: fixed;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  position: relative;
+  background-color: #080808;
   font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
 }
 
-.terminal {
-  width: 900px;
-  max-width: 90vw;
-  background-color: rgba(13, 13, 13, 0.95);
-  border: 1px solid #333;
-  border-radius: 8px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 1);
-  z-index: 10;
-}
-
-.header {
-  background-color: #1a1a1a;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid #333;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #333;
-}
-
-.title {
-  color: #666;
-  font-size: 0.8rem;
-  margin-left: 10px;
-}
-
-.body {
-  padding: 60px;
-  text-align: center;
-}
-
-.headline {
-  font-size: 4rem;
-  color: #00ff41;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  letter-spacing: 8px;
-}
-
-.subline {
-  font-size: 1.1rem;
-  color: #888;
-  margin-bottom: 60px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.tutorialGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  text-align: left;
-  margin-bottom: 60px;
-}
-
-.step h4 {
-  color: #fff;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-.step p {
-  color: #666;
-  font-size: 0.8rem;
-  line-height: 1.6;
-}
-
-.number {
-  color: #00ff41;
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.cta {
-  background-color: #00ff41;
-  color: #000;
-  border: none;
-  padding: 15px 40px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
+/* ── Background ───────────────────────────────── */
 .background {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 255, 65, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Subtle CRT scanline sweep */
+.scanline {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.08) 3px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+/* ── Terminal Window ──────────────────────────── */
+.terminal {
+  position: relative;
+  z-index: 10;
+  width: min(880px, 92vw);
+  background-color: #0d0d0d;
+  border: 1px solid #1f1f1f;
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 1px #000,
+    0 40px 80px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(0, 255, 65, 0.04);
+}
+
+/* ── Title Bar ────────────────────────────────── */
+.titleBar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 11px 16px;
+  background-color: #141414;
+  border-bottom: 1px solid #1a1a1a;
+  border-radius: 10px 10px 0 0;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+  display: block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dotRed    { background-color: #ff5f57; box-shadow: 0 0 4px rgba(255, 95, 87, 0.5); }
+.dotYellow { background-color: #ffbd2e; box-shadow: 0 0 4px rgba(255, 189, 46, 0.4); }
+.dotGreen  { background-color: #28c840; box-shadow: 0 0 4px rgba(40, 200, 64, 0.4); }
+
+.titleLabel {
+  flex: 1;
+  text-align: center;
+  color: #3a3a3a;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.titleSpacer {
+  width: 46px; /* mirrors dots width to keep label truly centered */
+  flex-shrink: 0;
+}
+
+/* ── Body ─────────────────────────────────────── */
+.body {
+  padding: 48px 56px 52px;
+}
+
+/* ── Prompt line ──────────────────────────────── */
+.prompt {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-size: 0.78rem;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+.promptUser   { color: #28c840; }
+.promptSep    { color: #555; }
+.promptPath   { color: #5b8dd9; }
+.promptDollar { color: #555; margin-left: 2px; }
+.promptCmd    { color: #888; }
+
+/* ── Headline ─────────────────────────────────── */
+.headline {
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  color: #00ff41;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin: 0 0 18px;
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(0, 255, 65, 0.25);
+}
+
+.headlineSep {
+  color: #2a2a2a;
+}
+
+/* ── Subline ──────────────────────────────────── */
+.subline {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0 0 36px;
+  letter-spacing: 0.02em;
+}
+
+.sublineAccent {
+  color: #444;
+}
+
+/* ── Divider ──────────────────────────────────── */
+.divider {
   width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #1e1e1e 20%, #1e1e1e 80%, transparent);
+  margin-bottom: 36px;
+}
+
+/* ── Steps ────────────────────────────────────── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-bottom: 44px;
+}
+
+.step {
+  padding: 0 28px 0 0;
+  border-right: 1px solid #181818;
+}
+
+.step:first-child {
+  padding-left: 0;
+}
+
+.step:last-child {
+  border-right: none;
+  padding-right: 0;
+  padding-left: 28px;
+}
+
+.step:nth-child(2) {
+  padding-left: 28px;
+}
+
+.stepNumber {
+  display: block;
+  color: #00ff41;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.stepLabel {
+  color: #ccc;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.stepDesc {
+  color: #444;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── CTA Button ───────────────────────────────── */
+.cta {
+  /* Reset all global button styles */
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background-color: #00ff41;
+  color: #000;
+  padding: 14px 36px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 0 24px rgba(0, 255, 65, 0.2);
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.cta:hover {
+  background-color: #1aff55;
+  box-shadow: 0 0 36px rgba(0, 255, 65, 0.35);
+}
+
+.ctaPrompt {
+  opacity: 0.5;
+  margin-right: 2px;
+}
+
+/* Blinking cursor */
+.cursor {
+  margin-left: 6px;
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 640px) {
+  .body {
+    padding: 36px 28px 40px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .step {
+    padding: 0 !important;
+    border-right: none;
+    border-bottom: 1px solid #181818;
+    padding-bottom: 28px !important;
+  }
+
+  .step:last-child {
+    border-bottom: none;
+    padding-bottom: 0 !important;
+  }
 }

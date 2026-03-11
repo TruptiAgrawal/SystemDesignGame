@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useSystemStore } from '../../store/useSystemStore';
 import styles from './ValidationHUD.module.css';
-import type { InfrastructureNode } from '../../types/system';
 
 const ValidationHUD = () => {
   const { nodes, edges } = useSystemStore();

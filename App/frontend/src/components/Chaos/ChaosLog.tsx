@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { useSystemStore } from '../../store/useSystemStore';
 import styles from './ChaosLog.module.css';
 
